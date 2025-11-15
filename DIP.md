@@ -1,6 +1,7 @@
 # Practical 1 : Perform image filtering using Fourier Transform (Low-Pass & High-Pass Filtering).
 
-```import cv2
+```
+import cv2
 import numpy as np
 import matplotlib.pyplot as plt
 
@@ -44,6 +45,7 @@ plt.subplot(1, 3, 3)
 plt.imshow(hpf_img, cmap='gray')
 plt.title('High-Pass Filtered Image (Edges)')
 plt.tight_layout()
-plt.show() ```
+plt.show() 
+```
 
 --- 

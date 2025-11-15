@@ -56,3 +56,45 @@ plt.show()
 - The Inverse FFT is then applied to bring the filtered images back to the spatial domain . Finally, the original, low-pass, and high-pass filtered images are displayed side by side for visual comparison.
 
 ---
+
+# Practical 2 : Load and display an image in different color models (RGB, CMY, HSV, Grayscale).
+
+```python
+%pip install opencv-python matplotlib numpy
+
+import cv2
+import numpy as np
+import matplotlib.pyplot as plt
+
+# Step 1: Load image in RGB color model
+img_bgr = cv2.imread('demo_image.jpg')     
+img_rgb = cv2.cvtColor(img_bgr, cv2.COLOR_BGR2RGB)
+
+# Step 2: Convert RGB to other color models
+img_hsv = cv2.cvtColor(img_rgb, cv2.COLOR_RGB2HSV)      
+img_gray = cv2.cvtColor(img_rgb, cv2.COLOR_RGB2GRAY)     
+img_cmy = 1 - (img_rgb / 255.0)                       
+
+# Step 3: Display all color models
+titles = ['RGB Image', 'CMY Image', 'HSV Image', 'Grayscale Image']
+images = [img_rgb, img_cmy, img_hsv, img_gray]
+
+plt.figure(figsize=(10, 8))
+for i in range(4):
+    plt.subplot(2, 2, i + 1)
+    plt.imshow(images[i], cmap='gray' if i == 3 else None)
+    plt.title(titles[i])
+    plt.axis('off')
+plt.tight_layout()
+plt.show()
+```
+
+## Steps :
+- The image is loaded using OpenCV in BGR format and converted to RGB for correct color display.
+- The RGB image is then transformed into HSV (Hue, Saturation, Value) and Grayscale using OpenCV’s cvtColor() function.
+- The CMY (Cyan, Magenta, Yellow) model is manually derived by subtracting the RGB values (normalized to 0–1) from 1.
+- Each color space highlights different image characteristics — RGB shows natural colors, HSV separates intensity from color, and Grayscale shows brightness.
+- All versions are displayed using Matplotlib for side-by-side comparison.
+- This helps in understanding how various color models represent the same image differently for different image processing tasks.
+
+---

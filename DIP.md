@@ -16,7 +16,7 @@ fshift = np.fft.fftshift(f)
 rows, cols = img.shape
 crow, ccol = rows // 2, cols // 2
 mask = np.zeros((rows, cols), np.uint8)
-r = 50  
+r = 50
 cv2.circle(mask, (ccol, crow), r, 1, thickness=-1)
 
 # Step 4: Apply LPF

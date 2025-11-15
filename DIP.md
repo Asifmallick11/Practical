@@ -48,4 +48,11 @@ plt.tight_layout()
 plt.show()
 ```
 
+# Steps :
+- The image is first loaded in grayscale to simplify processing and reduce computational complexity.
+- Using Fast Fourier Transform (FFT), the image is converted from the spatial domain to the frequency domain, where low and high frequencies represent smooth and detailed regions, respectively.
+- A Low-Pass Filter (LPF) mask is created to retain low frequencies (blurring the image), while a High-Pass Filter (HPF) mask is created to retain high frequencies (highlighting edges).
+- These masks are multiplied with the Fourier-transformed image to selectively pass or block certain frequencies.
+- The Inverse FFT is then applied to bring the filtered images back to the spatial domain . Finally, the original, low-pass, and high-pass filtered images are displayed side by side for visual comparison.
+
 ---

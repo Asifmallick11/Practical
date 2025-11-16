@@ -137,7 +137,7 @@ rs.status()
 
 ---
 
-# Practical 2 : To write NOSQL QUERIES to understand the concept of Open Source Database Management System such as CASSANDRA.
+# Practical 3 : To write NOSQL QUERIES to understand the concept of Open Source Database Management System such as CASSANDRA.
 
 ## PROCEDURE:
 Step 1: Start the CASSANDRA Server (Cassandra) using CMD.
@@ -226,7 +226,7 @@ describe table vvt ;
 
 ```
 
-## Conclusion : Thus , the Cassandra distribution database was successfully set up using Docker and all NOSQL operations (CREATE , ALTER , INSERT , UPDATE , DELETE , TRUNCATE , DROP) were performed using CQL .
-- 
+## Conclusion : 
+- Thus , the Cassandra distribution database was successfully set up using Docker and all NOSQL operations (CREATE , ALTER , INSERT , UPDATE , DELETE , TRUNCATE , DROP) were performed using CQL .
 
 ---

@@ -140,23 +140,22 @@ rs.status()
 # Practical 3 : To write NOSQL QUERIES to understand the concept of Open Source Database Management System such as CASSANDRA.
 
 ## PROCEDURE:
-Step 1: Start the CASSANDRA Server (Cassandra) using CMD.
-Step 2: Start the Client (CQLSH.py) using CMD.
-Step 3: Perform the Cassandra Table Operation, Curd Operation and CQL Types.
+- Step 1: Start the CASSANDRA Server (Cassandra) using CMD.
+- Step 2: Start the Client (CQLSH.py) using CMD.
+- Step 3: Perform the Cassandra Table Operation, Curd Operation and CQL Types.
 
 ## Cassandra Table Operations:
-1.Create Key Space in Cassandra. CREATE KEYSPACE <identifier> WITH
-<properties>
-2.To Create Cassandra Table, Using Create Command.
-3.To Change the structure of the table, Using Alter Command.
-4.To delete the existing table in Cassandra, Using Truncate Command.
-5.To Insert the values in CQL, use insert command
-6.The SELECT command is used to read data from Cassandra table
-7.The UPDATE command is used to update the existing data in a Cassandra.
-8.The DELETE command is used to delete data from Cassandra table
+- 1.Create Key Space in Cassandra. CREATE KEYSPACE <identifier> WITH <properties>
+- 2.To Create Cassandra Table, Using Create Command.
+- 3.To Change the structure of the table, Using Alter Command.
+- 4.To delete the existing table in Cassandra, Using Truncate Command.
+- 5.To Insert the values in CQL, use insert command
+- 6.The SELECT command is used to read data from Cassandra table
+- 7.The UPDATE command is used to update the existing data in a Cassandra.
+- 8.The DELETE command is used to delete data from Cassandra table
 
-Step 4 : Close the command prompt
-Step 5 : Stop the Server
+- Step 4 : Close the command prompt
+- Step 5 : Stop the Server
 
 ```shell
 

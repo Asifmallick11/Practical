@@ -2,7 +2,7 @@
 
 ```javascript
 
-#Step 1 : Create a Database and then run the following command into the mongodb shell
+// Step 1 : Create a Database and then run the following command into the mongodb shell
 
 db["users"].insertMany([  { "user_id": 1, "user_name": "Rahul Sharma", "user_address": "Mumbai, Maharashtra" },
   { "user_id": 2, "user_name": "Priya Verma", "user_address": "Delhi, India" },
@@ -35,23 +35,23 @@ db["users"].insertMany([  { "user_id": 1, "user_name": "Rahul Sharma", "user_add
   { "user_id": 29, "user_name": "Jay Patel", "user_address": "Rajkot, Gujarat" },
   { "user_id": 30, "user_name": "Aisha Mir", "user_address": "Srinagar, Jammu & Kashmir" }])
 
-# Step 2 : FindOne Operation 
+// Step 2 : FindOne Operation 
 
 db["users"].find()
 
-# Step 3 : FindOne with user_id Operation
+// Step 3 : FindOne with user_id Operation
 
 db["users"].findOne({user_id : 3})
 
-# Step 4 : DeleteOne Operation
+// Step 4 : DeleteOne Operation
 
 db["users"].deleteOne({user_id : 3})
 
-# Step 5 : UpdateOne Operation
+// Step 5 : UpdateOne Operation
 
 db["users"].updateOne({user_id : 2} , {$set : {user_address : "San Francisco , USA"}})
 
-$ Step 6 : Last Step 
+// Step 6 : Last Step 
 
 db["users"].find().pretty()
 

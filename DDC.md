@@ -61,3 +61,172 @@ db["users"].find().pretty()
 - In this way we have Installed MongoDB and created a database with a collection and  Performed basic CRUD operations(Create, Read, Update, Delete).
 
 ---
+
+# Practical 2 : To write NoSQL queries to understand the concept of an Open Source Database Management System such as MongoDB, and perform CRUD, Indexing, Sharding, and Deployment operations.
+
+```javascript
+
+// Step 1: Start MongoDB Server
+mongod --dbpath "C:\data\db" --port 27017
+
+// Step 2: Start MongoDB Shell
+mongosh --port 27017
+
+// CRUD OPERATIONS
+// Create/Select Database
+use vysya
+
+// Insert Document
+db.vysya.insertOne({
+  course: "ADT",
+  details: { lab: "6 months", Trainer: "Natarajan" },
+  category: "Programming language"
+})
+
+// Read (Display/Search)
+db.vysya.find().pretty()
+
+// Update
+db.vysya.updateOne(
+  { course: "ADT" },
+  { $set: { course: "Advanced Database Technology" } }
+)
+
+// Delete
+db.vysya.deleteMany({})
+
+// INDEXING OPERATION
+db.vysya.createIndex({ regNo: 1 })
+
+
+// SHARDING OPERATION
+
+// Step 1: Create Collection
+db.createCollection("movie1")
+
+// Step 2: Enable Sharding on Database
+sh.enableSharding("vysya")
+
+// Step 3: Shard Collection
+sh.shardCollection("vysya.movie1", { title: 1 })
+
+// Step 4: Check Shard Distribution
+db.movie1.getShardDistribution()
+
+// Step 5: Check Shard Status
+sh.status()
+
+// DEPLOYMENT OPERATION (REPLICA SET)
+// Step 1: Initialize Replica Set
+rs.initiate({
+  _id: "rs0",
+  members: [
+    { _id: 0, host: "mongodb0:27017" },
+    { _id: 1, host: "mongodb1:27017" },
+    { _id: 2, host: "mongodb2:27017" }
+  ]
+})
+
+// Step 2: Check Replica Set Status
+rs.status()
+
+```
+
+## Conclusion : 
+- Thus , In this way we have performed CRUD, Indexing, Sharding, and Deployment operations on a MongoDB Database .
+
+---
+
+# Practical 2 : To write NOSQL QUERIES to understand the concept of Open Source Database Management System such as CASSANDRA.
+
+## PROCEDURE:
+Step 1: Start the CASSANDRA Server (Cassandra) using CMD.
+Step 2: Start the Client (CQLSH.py) using CMD.
+Step 3: Perform the Cassandra Table Operation, Curd Operation and CQL Types.
+
+## Cassandra Table Operations:
+1.Create Key Space in Cassandra. CREATE KEYSPACE <identifier> WITH
+<properties>
+2.To Create Cassandra Table, Using Create Command.
+3.To Change the structure of the table, Using Alter Command.
+4.To delete the existing table in Cassandra, Using Truncate Command.
+5.To Insert the values in CQL, use insert command
+6.The SELECT command is used to read data from Cassandra table
+7.The UPDATE command is used to update the existing data in a Cassandra.
+8.The DELETE command is used to delete data from Cassandra table
+
+Step 4 : Close the command prompt
+Step 5 : Stop the Server
+
+```shell
+
+# Pull the latest cassandra image from docker hub
+docker pull cassandra:latest
+
+# Make sure that the image is pulled
+docker images
+
+# Run the cassandra images 
+docker run --name cassandra-container -d -p 9042:9042 cassandra:latest
+
+# Cassandra conatiner logs
+docker logs -f cassandra-container
+
+# Exec into the container to run cqlsh commands
+docker exec -it cassandra-container cqlsh
+
+# Create a keyspace names vysya with replication factor 3 and class as SimpleStratergy
+CREATE KEYSPACE vysya WITH replication = {'class' : 'SimpleStrategy' , 'replication-factor' : 3} ;
+
+# USE the vysya keyspace
+USE vysya ;
+
+# Create table 
+CREATE TABLE VVT(Id int PRIMARY KEY , name text , city text , fees variant);
+
+# ALter table
+ALTER TABLE VVT ADD email text ;
+
+# Select Statement
+select * from vvt ;
+
+# Drop Email
+ALTER TABLE VVT DROP email ;
+
+select * from vvt ;
+
+# TRUNCATE 
+TRUNCATE VVT ;
+
+# Insert into vvt
+INSERT INTO VVT(id , fees , name , city) VALUES(1 , 5000 , 'Natarajan S' , 'Namakkal') ;
+
+select * from vvt ; 
+
+# Update 
+
+UPDATE VVT SET fees=500 , name='Natarajan S' WHERE id=1 ;
+
+select * from vvt ; 
+
+# Inserting more values
+
+INSERT INTO VVT(id , fees , name , city) VALUES(2 , 5000 , 'Rahul' , 'Aathur') ;
+INSERT INTO VVT(id , fees , name , city) VALUES(3 , 5000 , 'Partha' , 'Salem') ;
+
+select * from vvt ;
+
+# Deleting 
+delete from vvt where id = 3 ;
+
+select * from vvt ;
+
+# Describing table 
+describe table vvt ;
+
+```
+
+## Conclusion : Thus , the Cassandra distribution database was successfully set up using Docker and all NOSQL operations (CREATE , ALTER , INSERT , UPDATE , DELETE , TRUNCATE , DROP) were performed using CQL .
+- 
+
+---

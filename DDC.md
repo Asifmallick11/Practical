@@ -689,24 +689,25 @@ INSERT INTO Fine VALUES
 (1, 1, 50.00, 'Paid');
 
 -- Step 4: Execute Queries
-List all books
+
+-- List all books
 SELECT * FROM Book;
 
-Find all issued books
+-- Find all issued books
 SELECT Book_ID, Member_ID, Issue_Date
 FROM Issue_Return
 WHERE Status = 'Issued';
 
-Show overdue books
+-- Show overdue books
 SELECT * FROM Issue_Return
 WHERE Return_Date < CURRENT_DATE AND Status = 'Issued';
 
-Count total books by category
+-- Count total books by category
 SELECT Category, COUNT(*) AS TotalBooks
 FROM Book
 GROUP BY Category;
 
-Calculate total fine collected
+-- Calculate total fine collected
 SELECT SUM(Amount) AS TotalFine
 FROM Fine
 WHERE Paid_Status = 'Paid';

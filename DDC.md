@@ -519,6 +519,14 @@ db.students.deleteMany({})
 
 ## Procedure :
 
+```shell
+
+docker pull couchdb
+
+docker run -d --name my-couchdb -p 5984:5984 -e COUCHDB_USER=admin  -e COUCHDB_PASSWORD=admin123 couchdb
+
+```
+
 ```javascript 
 
 // Description:
